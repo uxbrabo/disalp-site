@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { motion } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
+import { fadeUp, usePrefersReducedMotion } from "@/lib/motion";
 import {
   ENDERECO_CURTO,
   GOOGLE_MAPS_EMBED_SRC,
@@ -49,6 +51,14 @@ const inputClass =
  */
 export function Contato() {
   const [enviado, setEnviado] = useState(false);
+  const reduceMotion = usePrefersReducedMotion();
+  const anim = (i: number) => ({
+    variants: fadeUp,
+    custom: i,
+    initial: reduceMotion ? undefined : "hidden",
+    whileInView: reduceMotion ? undefined : "show",
+    viewport: { once: true, margin: "-80px" } as const,
+  });
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -58,16 +68,16 @@ export function Contato() {
   return (
     <section id="contato" className="scroll-mt-[72px] bg-muted py-24 md:py-28">
       <div className="mx-auto max-w-[1200px] px-6">
-        <div className="mx-auto max-w-xl text-center">
+        <motion.div {...anim(0)} className="mx-auto max-w-xl text-center">
           <Badge className="border border-border bg-background">Fale conosco</Badge>
           <h2 className="mt-4 text-balance font-display text-4xl font-bold leading-[1.15] text-grafite-500 md:text-5xl">
             Entre em contato, conte como podemos ajudar.
           </h2>
-        </div>
+        </motion.div>
 
         {/* Cartões de contato */}
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {CONTATOS.map((contato) => {
+          {CONTATOS.map((contato, i) => {
             const Icon = contato.icon;
             const conteudo = (
               <>
@@ -84,21 +94,22 @@ export function Contato() {
             );
             const externo = contato.href.startsWith("http");
             return (
-              <a
+              <motion.a
                 key={contato.label}
+                {...anim(i)}
                 href={contato.href}
                 {...(externo ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className="flex items-center gap-4 border border-border bg-background p-5 transition-colors hover:border-primary-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                className="flex items-center gap-4 border border-border bg-background p-5 transition-[color,border-color,transform] duration-300 hover:border-primary-200 motion-safe:hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
                 {conteudo}
-              </a>
+              </motion.a>
             );
           })}
         </div>
 
         {/* Mapa + formulário */}
         <div className="mt-16 grid grid-cols-1 items-stretch gap-12 lg:grid-cols-2">
-          <div className="relative aspect-[4/5] w-full overflow-hidden border border-border lg:aspect-auto lg:min-h-[420px]">
+          <motion.div {...anim(0)} className="relative aspect-[4/5] w-full overflow-hidden border border-border lg:aspect-auto lg:min-h-[420px]">
             <iframe
               src={GOOGLE_MAPS_EMBED_SRC}
               title="Localização da Disalp — CEASA-PE, Curado, Recife"
@@ -106,9 +117,9 @@ export function Contato() {
               referrerPolicy="no-referrer-when-downgrade"
               className="absolute inset-0 h-full w-full border-0"
             />
-          </div>
+          </motion.div>
 
-          <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-6">
+          <motion.form {...anim(1)} onSubmit={handleSubmit} noValidate className="flex flex-col gap-6">
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               <div>
                 <label htmlFor="contato-nome" className="font-sans text-sm font-medium text-grafite-500">
@@ -179,7 +190,7 @@ export function Contato() {
                 Recebemos sua mensagem — entraremos em contato em breve.
               </p>
             )}
-          </form>
+          </motion.form>
         </div>
       </div>
     </section>

@@ -1,12 +1,20 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ButtonLink } from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
 
+/**
+ * Âncoras (#categorias, #rota, #sobre, #contato) começam com "/" de
+ * propósito — só existem na home. Sem o "/" na frente, clicar nelas a partir
+ * de outra rota (ex.: /catalogo) não navega a lugar nenhum, só tenta rolar
+ * dentro da página atual, que não tem esses elementos.
+ */
 const NAV = [
-  { label: "Categorias", href: "#categorias" },
-  { label: "Como funciona", href: "#rota" },
-  { label: "Escala", href: "#sobre" },
-  { label: "Contato", href: "#contato" },
+  { label: "Categorias", href: "/#categorias" },
+  { label: "Catálogo", href: "/catalogo" },
+  { label: "Como funciona", href: "/#rota" },
+  { label: "Escala", href: "/#sobre" },
+  { label: "Contato", href: "/#contato" },
 ];
 
 /**
@@ -17,30 +25,30 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 h-[72px] border-b border-border bg-background/90 backdrop-blur">
       <div className="mx-auto flex h-full max-w-[1200px] items-center justify-between px-6">
-        <a href="#" className="flex items-center" aria-label="Disalp — página inicial">
+        <Link href="/" className="flex items-center" aria-label="Disalp — página inicial">
           <Image
-            src="/brand/disalp-logo.png"
+            src="/brand/logo-disalp.svg"
             alt="Disalp Distribuidora"
-            width={252}
-            height={112}
+            width={1000}
+            height={411}
             className="h-10 w-auto"
             priority
           />
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Navegação principal">
           {NAV.map((item) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
-              className="font-sans text-sm font-medium text-grafite-500 transition-colors hover:text-primary"
+              className="relative font-sans text-sm font-medium text-grafite-500 transition-colors hover:text-primary after:absolute after:inset-x-0 after:-bottom-1 after:h-px after:origin-left after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 after:content-[''] motion-safe:hover:after:scale-x-100"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
-        <ButtonLink href="#contato" size="sm" icon={<ArrowRight size={16} strokeWidth={2.5} />}>
+        <ButtonLink href="/catalogo" size="sm" icon={<ArrowRight size={16} strokeWidth={2.5} />}>
           Pedir tabela
         </ButtonLink>
       </div>

@@ -108,7 +108,7 @@ export function Hero() {
 
           <motion.div custom={3} variants={fadeUp} className="mt-9">
             <ButtonLink
-              href="#sobre"
+              href="/#sobre"
               size="lg"
               icon={<ArrowRight size={18} strokeWidth={2.5} />}
             >

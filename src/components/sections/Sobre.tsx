@@ -1,5 +1,9 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { IMAGENS } from "@/lib/imagens";
+import { fadeUp, usePrefersReducedMotion } from "@/lib/motion";
 
 /**
  * ⚠️ Números ilustrativos — placeholder de layout. Trocar pelos números
@@ -19,12 +23,21 @@ const METRICAS = [
  * Fotos vêm de src/lib/imagens.ts (IMAGENS.aboutMain / IMAGENS.aboutInset).
  */
 export function Sobre() {
+  const reduceMotion = usePrefersReducedMotion();
+  const anim = (i: number) => ({
+    variants: fadeUp,
+    custom: i,
+    initial: reduceMotion ? undefined : "hidden",
+    whileInView: reduceMotion ? undefined : "show",
+    viewport: { once: true, margin: "-80px" } as const,
+  });
+
   return (
     <section id="sobre" className="scroll-mt-[72px] py-24 md:py-28">
       <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-start gap-x-16 gap-y-20 px-6 lg:grid-cols-2">
         {/* Coluna esquerda: colagem + estatísticas */}
         <div>
-          <div className="relative">
+          <motion.div {...anim(0)} className="group relative">
             {/* Imagem principal — largura total da coluna */}
             <div className="relative aspect-video w-full overflow-hidden bg-primary-100">
               <Image
@@ -32,7 +45,7 @@ export function Sobre() {
                 alt={IMAGENS.aboutMain.alt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
+                className="object-cover transition-transform duration-[600ms] ease-out motion-safe:group-hover:scale-105"
               />
             </div>
             {/* Imagem menor — sobreposta ao canto inferior direito, sangrando
@@ -49,25 +62,25 @@ export function Sobre() {
                 className="object-cover"
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* Estatísticas */}
           <div className="mt-16 flex gap-10">
-            {METRICAS.map((m) => (
-              <div key={m.label}>
+            {METRICAS.map((m, i) => (
+              <motion.div key={m.label} {...anim(i + 1)}>
                 <span className="font-display text-4xl font-extrabold text-primary md:text-5xl">
                   {m.valor}
                 </span>
                 <p className="mt-1 font-sans text-xs leading-snug text-muted-foreground">
                   {m.label}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
 
         {/* Coluna direita: texto */}
-        <div>
+        <motion.div {...anim(1)}>
           <span className="font-mono text-xs font-semibold uppercase tracking-wider text-primary">
             Sobre a Disalp
           </span>
@@ -79,7 +92,7 @@ export function Sobre() {
             entregamos com cadeia de frio controlada — do primeiro contato até a
             última gôndola reposta, tudo operado pela mesma equipe.
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

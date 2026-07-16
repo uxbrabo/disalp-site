@@ -43,7 +43,8 @@ interface BaseProps {
 
 const base =
   "inline-flex items-center justify-center font-sans font-semibold " +
-  "transition-colors duration-150 disabled:opacity-50 disabled:pointer-events-none " +
+  "transition-[color,background-color,border-color,transform] duration-200 disabled:opacity-50 disabled:pointer-events-none " +
+  "motion-safe:hover:-translate-y-0.5 motion-safe:active:translate-y-0 motion-safe:active:scale-[0.98] " +
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 
 export const Button = forwardRef<
