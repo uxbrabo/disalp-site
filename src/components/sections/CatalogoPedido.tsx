@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Image from "next/image";
 import { Minus, Plus } from "lucide-react";
 import { ButtonLink } from "@/components/ui/Button";
 import { CATEGORIAS, type CategoriaId } from "@/lib/categorias";
@@ -127,25 +128,35 @@ export function CatalogoPedido() {
             return (
               <article key={produto.id} className="border border-border bg-background">
                 <div
-                  className="relative flex aspect-[4/3] items-center justify-center"
+                  className="relative flex aspect-[4/3] items-center justify-center overflow-hidden"
                   style={{ backgroundColor: `var(--color-${categoria.token}-50)` }}
                 >
-                  {produto.badge && (
-                    <span
-                      className={cn(
-                        "absolute left-3 top-3 px-2.5 py-1 font-sans text-xs font-semibold",
-                        BADGE_CLASSE[produto.badge]
-                      )}
-                    >
-                      {produto.badge}
-                    </span>
-                  )}
                   <Icon
                     size={48}
                     strokeWidth={1.5}
                     style={{ color: `var(--color-${categoria.token}-500)` }}
                     aria-hidden
                   />
+                  <Image
+                    src={produto.imagem}
+                    alt={produto.nome}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).style.display = "none";
+                    }}
+                    className="object-cover"
+                  />
+                  {produto.badge && (
+                    <span
+                      className={cn(
+                        "absolute left-3 top-3 z-10 px-2.5 py-1 font-sans text-xs font-semibold",
+                        BADGE_CLASSE[produto.badge]
+                      )}
+                    >
+                      {produto.badge}
+                    </span>
+                  )}
                 </div>
 
                 <div className="p-4">

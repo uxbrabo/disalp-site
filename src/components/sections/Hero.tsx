@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import { ButtonLink } from "@/components/ui/Button";
 import { IMAGENS } from "@/lib/imagens";
@@ -8,6 +9,7 @@ import { ArrowRight, Leaf } from "lucide-react";
 import { EASE_OUT, usePrefersReducedMotion } from "@/lib/motion";
 
 const HERO_VIDEO_SRC = "/videos/VIDEO-HERO-01.mp4";
+const CROSSFADE_S = 0.6;
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 16 },
@@ -51,18 +53,7 @@ export function Hero() {
           sizes="100vw"
           className="object-cover"
         />
-        {showVideo && (
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            aria-hidden="true"
-            className="absolute inset-0 h-full w-full object-cover"
-          >
-            <source src={HERO_VIDEO_SRC} type="video/mp4" />
-          </video>
-        )}
+        {showVideo && <HeroVideo src={HERO_VIDEO_SRC} />}
         {/* Gradiente de legibilidade */}
         <div
           aria-hidden
@@ -118,5 +109,67 @@ export function Hero() {
         </motion.div>
       </div>
     </section>
+  );
+}
+
+/**
+ * HeroVideo — evita o "tremelique" do loop nativo (`loop` faz um corte seco
+ * do último frame pro primeiro, visível porque nunca são idênticos). Dois
+ * `<video>` sobrepostos, mesmo arquivo: enquanto um termina, o outro já
+ * recomeça por baixo e um crossfade de opacidade (CROSSFADE_S) esconde o
+ * corte. Como as duas tags apontam pro mesmo arquivo, o segundo play() sai
+ * do cache do navegador — não baixa o vídeo de novo.
+ */
+function HeroVideo({ src }: { src: string }) {
+  const refA = useRef<HTMLVideoElement>(null);
+  const refB = useRef<HTMLVideoElement>(null);
+  const [frenteA, setFrenteA] = useState(true);
+
+  useEffect(() => {
+    const frente = frenteA ? refA.current : refB.current;
+    const fundo = frenteA ? refB.current : refA.current;
+    if (!frente || !fundo) return;
+
+    let trocou = false;
+
+    function aoAtualizar() {
+      if (!frente || !fundo || !frente.duration || trocou) return;
+      const restante = frente.duration - frente.currentTime;
+      if (restante <= CROSSFADE_S) {
+        trocou = true;
+        fundo.currentTime = 0;
+        void fundo.play();
+        setFrenteA((v) => !v);
+      }
+    }
+
+    frente.addEventListener("timeupdate", aoAtualizar);
+    return () => frente.removeEventListener("timeupdate", aoAtualizar);
+  }, [frenteA]);
+
+  return (
+    <>
+      <video
+        ref={refA}
+        autoPlay
+        muted
+        playsInline
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover"
+        style={{ opacity: frenteA ? 1 : 0, transition: `opacity ${CROSSFADE_S}s linear` }}
+      >
+        <source src={src} type="video/mp4" />
+      </video>
+      <video
+        ref={refB}
+        muted
+        playsInline
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover"
+        style={{ opacity: frenteA ? 0 : 1, transition: `opacity ${CROSSFADE_S}s linear` }}
+      >
+        <source src={src} type="video/mp4" />
+      </video>
+    </>
   );
 }

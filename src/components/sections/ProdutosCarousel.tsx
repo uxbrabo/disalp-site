@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, ShoppingCart } from "lucide-react";
@@ -183,23 +184,33 @@ function ProdutoCard({ produto }: { produto: Produto }) {
         className="relative flex aspect-square items-center justify-center overflow-hidden"
         style={{ backgroundColor: `var(--color-${categoria.token}-50)` }}
       >
+        {/* Ícone fica atrás como fallback — se a foto carregar, cobre ele. */}
+        <Icon
+          size={56}
+          strokeWidth={1.5}
+          style={{ color: `var(--color-${categoria.token}-500)` }}
+          aria-hidden
+        />
+        <Image
+          src={produto.imagem}
+          alt={produto.nome}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          onError={(e) => {
+            (e.currentTarget as HTMLImageElement).style.display = "none";
+          }}
+          className="object-cover transition-transform duration-300 motion-safe:group-hover:scale-105"
+        />
         {produto.badge && (
           <span
             className={cn(
-              "absolute left-3 top-3 px-2.5 py-1 font-sans text-xs font-semibold",
+              "absolute left-3 top-3 z-10 px-2.5 py-1 font-sans text-xs font-semibold",
               BADGE_CLASSE[produto.badge]
             )}
           >
             {produto.badge}
           </span>
         )}
-        <Icon
-          size={56}
-          strokeWidth={1.5}
-          style={{ color: `var(--color-${categoria.token}-500)` }}
-          className="transition-transform duration-300 motion-safe:group-hover:scale-110"
-          aria-hidden
-        />
       </div>
 
       <div className="p-4">

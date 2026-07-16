@@ -11,6 +11,13 @@ export interface Produto {
   preco: number;
   precoAntigo?: number;
   badge?: ProdutoBadge;
+  /**
+   * Foto do produto em /public/img/produtos/<id>.jpg (proporção 1:1,
+   * fundo de feira desfocado, luz dourada — mesma estética do site).
+   * Se o arquivo não existir, o cartão volta pro fundo colorido + ícone
+   * da categoria (fallback automático via onError).
+   */
+  imagem: string;
 }
 
 /**
@@ -29,6 +36,7 @@ export const PRODUTOS: Produto[] = [
     preco: 89.9,
     precoAntigo: 110,
     badge: "Promoção",
+    imagem: "/img/produtos/manga-tommy.png",
   },
   {
     id: "banana-prata",
@@ -37,6 +45,7 @@ export const PRODUTOS: Produto[] = [
     nome: "Banana Prata AA",
     unidade: "Caixa 20kg",
     preco: 64.9,
+    imagem: "/img/produtos/banana-prata.png",
   },
   {
     id: "alface-crespa",
@@ -46,6 +55,7 @@ export const PRODUTOS: Produto[] = [
     unidade: "Caixa c/ 12 un.",
     preco: 38.5,
     badge: "Mais vendido",
+    imagem: "/img/produtos/alface-crespa.png",
   },
   {
     id: "rucula-organica",
@@ -54,6 +64,7 @@ export const PRODUTOS: Produto[] = [
     nome: "Rúcula Orgânica",
     unidade: "Caixa c/ 10 un.",
     preco: 42.0,
+    imagem: "/img/produtos/rucula-organica.png",
   },
   {
     id: "tomate-italiano",
@@ -62,6 +73,7 @@ export const PRODUTOS: Produto[] = [
     nome: "Tomate Italiano Extra AA",
     unidade: "Caixa 20kg",
     preco: 95.0,
+    imagem: "/img/produtos/tomate-italiano.png",
   },
   {
     id: "cenoura-lavada",
@@ -70,6 +82,7 @@ export const PRODUTOS: Produto[] = [
     nome: "Cenoura Lavada",
     unidade: "Caixa 20kg",
     preco: 58.0,
+    imagem: "/img/produtos/cenoura-lavada.png",
   },
   {
     id: "ovos-brancos",
@@ -79,6 +92,7 @@ export const PRODUTOS: Produto[] = [
     unidade: "Caixa c/ 30 dz.",
     preco: 210.0,
     badge: "Novidade",
+    imagem: "/img/produtos/ovos-brancos.png",
   },
   {
     id: "ovos-caipira",
@@ -87,6 +101,7 @@ export const PRODUTOS: Produto[] = [
     nome: "Ovos Caipira",
     unidade: "Caixa c/ 30 dz.",
     preco: 265.0,
+    imagem: "/img/produtos/ovos-caipira.png",
   },
   {
     id: "morango-congelado",
@@ -95,6 +110,7 @@ export const PRODUTOS: Produto[] = [
     nome: "Morango Congelado IQF",
     unidade: "Pacote 1kg",
     preco: 24.9,
+    imagem: "/img/produtos/morango-congelado.png",
   },
   {
     id: "polpa-fruta",
@@ -103,6 +119,65 @@ export const PRODUTOS: Produto[] = [
     nome: "Polpa de Fruta Mista",
     unidade: "Caixa c/ 12x100g",
     preco: 48.0,
+    imagem: "/img/produtos/polpa-fruta.png",
+  },
+  {
+    id: "abacaxi-perola",
+    categoriaId: "frutas",
+    categoriaLabel: "Frutas",
+    nome: "Abacaxi Pérola",
+    unidade: "Caixa c/ 8 un.",
+    preco: 72.0,
+    badge: "Mais vendido",
+    imagem: "/img/produtos/abacaxi-perola.png",
+  },
+  {
+    id: "maca-fuji",
+    categoriaId: "frutas",
+    categoriaLabel: "Frutas",
+    nome: "Maçã Fuji Nacional",
+    unidade: "Caixa 18kg",
+    preco: 118.0,
+    imagem: "/img/produtos/maca-fuji.png",
+  },
+  {
+    id: "couve-manteiga",
+    categoriaId: "verduras",
+    categoriaLabel: "Verduras",
+    nome: "Couve Manteiga",
+    unidade: "Caixa c/ 20 maços",
+    preco: 45.0,
+    imagem: "/img/produtos/couve-manteiga.png",
+  },
+  {
+    id: "batata-lavada",
+    categoriaId: "legumes",
+    categoriaLabel: "Legumes",
+    nome: "Batata Lavada Especial",
+    unidade: "Saco 25kg",
+    preco: 82.0,
+    precoAntigo: 98,
+    badge: "Promoção",
+    imagem: "/img/produtos/batata-lavada.png",
+  },
+  {
+    id: "cebola-nacional",
+    categoriaId: "legumes",
+    categoriaLabel: "Legumes",
+    nome: "Cebola Nacional",
+    unidade: "Saco 20kg",
+    preco: 76.0,
+    imagem: "/img/produtos/cebola-nacional.png",
+  },
+  {
+    id: "mucarela-fatiada",
+    categoriaId: "refrigerados",
+    categoriaLabel: "Refrigerados",
+    nome: "Muçarela Fatiada",
+    unidade: "Peça 4kg",
+    preco: 156.0,
+    badge: "Novidade",
+    imagem: "/img/produtos/mucarela-fatiada.png",
   },
 ];
 
