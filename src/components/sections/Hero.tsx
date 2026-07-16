@@ -51,7 +51,7 @@ export function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-[65%_35%] md:object-center"
         />
         {showVideo && <HeroVideo src={HERO_VIDEO_SRC} />}
         {/* Gradiente de legibilidade */}
@@ -155,7 +155,7 @@ function HeroVideo({ src }: { src: string }) {
         muted
         playsInline
         aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover object-[65%_35%] md:object-center"
         style={{ opacity: frenteA ? 1 : 0, transition: `opacity ${CROSSFADE_S}s linear` }}
       >
         <source src={src} type="video/mp4" />
@@ -165,7 +165,7 @@ function HeroVideo({ src }: { src: string }) {
         muted
         playsInline
         aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover object-[65%_35%] md:object-center"
         style={{ opacity: frenteA ? 0 : 1, transition: `opacity ${CROSSFADE_S}s linear` }}
       >
         <source src={src} type="video/mp4" />
