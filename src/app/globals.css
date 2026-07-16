@@ -1,0 +1,277 @@
+@import "tailwindcss";
+@import "@fontsource/plus-jakarta-sans/500.css";
+@import "@fontsource/plus-jakarta-sans/600.css";
+@import "@fontsource/plus-jakarta-sans/700.css";
+@import "@fontsource/plus-jakarta-sans/800.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+@import "@fontsource/ibm-plex-mono/600.css";
+
+/*
+ * Disalp — Design Tokens
+ * Fonte: disalp-tokens.css (sistema de marca já estabelecido).
+ * Passos marcados "derivado" foram completados por interpolação RGB
+ * a partir dos tons originalmente verificados — não são improviso solto,
+ * mas também não foram confirmados manualmente. Ajuste se tiver o arquivo fonte.
+ */
+
+:root {
+  --color-verde-50: #F0F9F4;
+  --color-verde-100: #DFF1E8;
+  --color-verde-200: #BBE1CE;
+  --color-verde-300: #8FCEAE;
+  --color-verde-400: #50B281;
+  --color-verde-500: #0C9450;
+  --color-verde-600: #0A7F45;
+  --color-verde-700: #086838;
+  --color-verde-800: #06502B;
+  --color-verde-900: #053B20;
+
+  --color-laranja-50: #FEF8F1;
+  --color-laranja-100: #FEEFE2;
+  --color-laranja-200: #FCDDC0;
+  --color-laranja-300: #FAC797;
+  --color-laranja-400: #F7A75C;
+  --color-laranja-500: #F4851D;
+  --color-laranja-600: #D27219;
+  --color-laranja-700: #AB5D14;
+  --color-laranja-800: #84480F;
+  --color-laranja-900: #5D330A;
+
+  --color-vermelho-50: #FEF1F2;
+  --color-vermelho-100: #FCD9DB;
+  --color-vermelho-200: #F7AAAD;
+  --color-vermelho-300: #F37B7E;
+  --color-vermelho-400: #EE4B50;
+  --color-vermelho-500: #EA1C22;
+  --color-vermelho-600: #C9181D;
+  --color-vermelho-700: #A81418;
+  --color-vermelho-800: #871013;
+  --color-vermelho-900: #660C0E;
+
+  --color-lima-50: #FAFCF3;
+  --color-lima-100: #F1F7E0;
+  --color-lima-200: #E0EDBB;
+  --color-lima-300: #CFE295;
+  --color-lima-400: #BED870;
+  --color-lima-500: #A5C938;
+  --color-lima-600: #8EAD30;
+  --color-lima-700: #779128;
+  --color-lima-800: #607520;
+  --color-lima-900: #495918;
+
+  --color-azul-50: #F1F8FC;
+  --color-azul-100: #DCEDF7;
+  --color-azul-200: #B1D8ED;
+  --color-azul-300: #87C3E4;
+  --color-azul-400: #5CAEDA;
+  --color-azul-500: #1D8ECC;
+  --color-azul-600: #197AAF;
+  --color-azul-700: #156692;
+  --color-azul-800: #115275;
+  --color-azul-900: #0D3E58;
+
+  --color-terracota-50: #FCF9F6;
+  --color-terracota-100: #F8F1EA;
+  --color-terracota-200: #EFE0D3;
+  --color-terracota-300: #E6D0BC;
+  --color-terracota-400: #D7B597;
+  --color-terracota-500: #C8986E;
+  --color-terracota-600: #AC835F;
+  --color-terracota-700: #8C6A4D;
+  --color-terracota-800: #6C513B;
+  --color-terracota-900: #4C3829;
+
+  --color-grafite-50: #F1F1F1;
+  --color-grafite-100: #E0E1E1;
+  --color-grafite-200: #BDBEBF;
+  --color-grafite-300: #939596;
+  --color-grafite-400: #56595A;
+  --color-grafite-500: #14181A;
+  --color-grafite-600: #111516;
+  --color-grafite-700: #0E1112;
+  --color-grafite-800: #0B0E0E;
+  --color-grafite-900: #080A0A;
+
+  /*
+   * Verde de marca (referência Rumput) — extraído por amostragem de pixel
+   * direto do print de referência (topbar, botões e faixa de serviços bateram
+   * na mesma cor em 5 pontos distintos: RGB 111,158,42 / #6FA02A).
+   * Escala 50–900 é derivada por interpolação a partir desse ponto confirmado.
+   * Decoupled da escala "verde" (que fica reservada pra categoria Legumes) —
+   * são duas coisas semanticamente diferentes: cor de marca/ação vs. cor de
+   * dado/categoria. Ver docs/design-system.md.
+   */
+  --color-primary-50: #F3F8EA;
+  --color-primary-100: #E3EFD1;
+  --color-primary-200: #C7DFA5;
+  --color-primary-300: #A9CD79;
+  --color-primary-400: #8BB94E;
+  --color-primary-500: #6FA02A;
+  --color-primary-600: #5C8720;
+  --color-primary-700: #4A6E19;
+  --color-primary-800: #395412;
+  --color-primary-900: #283B0C;
+
+  /* Semânticos */
+  --color-background: #FFFFFF;
+  --color-foreground: var(--color-grafite-500);
+  --color-card: #FFFFFF;
+  --color-border: var(--color-grafite-100);
+  --color-muted: var(--color-grafite-50);
+  --color-muted-foreground: var(--color-grafite-400);
+  --color-primary: var(--color-primary-500);
+  --color-primary-hover: var(--color-primary-600);
+  --color-primary-foreground: #FFFFFF;
+  --color-dark-section: var(--color-primary-900);
+  --color-dark-section-foreground: var(--color-primary-50);
+
+  /* Raio — sm/md confirmados no design system; lg/pill/full extensões coerentes */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.875rem;   /* extensão */
+  --radius-pill: 999px;    /* extensão, para badges/pills */
+
+  /* Tipografia — 3 papéis, uso restrito (ver docs/design-system.md) */
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  /* Espaçamento — ritmo vertical de seção */
+  --spacing-section: 7rem;      /* 112px desktop */
+  --spacing-section-sm: 4rem;   /* 64px mobile */
+}
+
+@theme inline {
+  --color-verde-50: var(--color-verde-50);
+  --color-verde-100: var(--color-verde-100);
+  --color-verde-200: var(--color-verde-200);
+  --color-verde-300: var(--color-verde-300);
+  --color-verde-400: var(--color-verde-400);
+  --color-verde-500: var(--color-verde-500);
+  --color-verde-600: var(--color-verde-600);
+  --color-verde-700: var(--color-verde-700);
+  --color-verde-800: var(--color-verde-800);
+  --color-verde-900: var(--color-verde-900);
+  --color-laranja-50: var(--color-laranja-50);
+  --color-laranja-100: var(--color-laranja-100);
+  --color-laranja-200: var(--color-laranja-200);
+  --color-laranja-300: var(--color-laranja-300);
+  --color-laranja-400: var(--color-laranja-400);
+  --color-laranja-500: var(--color-laranja-500);
+  --color-laranja-600: var(--color-laranja-600);
+  --color-laranja-700: var(--color-laranja-700);
+  --color-laranja-800: var(--color-laranja-800);
+  --color-laranja-900: var(--color-laranja-900);
+  --color-vermelho-50: var(--color-vermelho-50);
+  --color-vermelho-100: var(--color-vermelho-100);
+  --color-vermelho-200: var(--color-vermelho-200);
+  --color-vermelho-300: var(--color-vermelho-300);
+  --color-vermelho-400: var(--color-vermelho-400);
+  --color-vermelho-500: var(--color-vermelho-500);
+  --color-vermelho-600: var(--color-vermelho-600);
+  --color-vermelho-700: var(--color-vermelho-700);
+  --color-vermelho-800: var(--color-vermelho-800);
+  --color-vermelho-900: var(--color-vermelho-900);
+  --color-lima-50: var(--color-lima-50);
+  --color-lima-100: var(--color-lima-100);
+  --color-lima-200: var(--color-lima-200);
+  --color-lima-300: var(--color-lima-300);
+  --color-lima-400: var(--color-lima-400);
+  --color-lima-500: var(--color-lima-500);
+  --color-lima-600: var(--color-lima-600);
+  --color-lima-700: var(--color-lima-700);
+  --color-lima-800: var(--color-lima-800);
+  --color-lima-900: var(--color-lima-900);
+  --color-azul-50: var(--color-azul-50);
+  --color-azul-100: var(--color-azul-100);
+  --color-azul-200: var(--color-azul-200);
+  --color-azul-300: var(--color-azul-300);
+  --color-azul-400: var(--color-azul-400);
+  --color-azul-500: var(--color-azul-500);
+  --color-azul-600: var(--color-azul-600);
+  --color-azul-700: var(--color-azul-700);
+  --color-azul-800: var(--color-azul-800);
+  --color-azul-900: var(--color-azul-900);
+  --color-terracota-50: var(--color-terracota-50);
+  --color-terracota-100: var(--color-terracota-100);
+  --color-terracota-200: var(--color-terracota-200);
+  --color-terracota-300: var(--color-terracota-300);
+  --color-terracota-400: var(--color-terracota-400);
+  --color-terracota-500: var(--color-terracota-500);
+  --color-terracota-600: var(--color-terracota-600);
+  --color-terracota-700: var(--color-terracota-700);
+  --color-terracota-800: var(--color-terracota-800);
+  --color-terracota-900: var(--color-terracota-900);
+  --color-grafite-50: var(--color-grafite-50);
+  --color-grafite-100: var(--color-grafite-100);
+  --color-grafite-200: var(--color-grafite-200);
+  --color-grafite-300: var(--color-grafite-300);
+  --color-grafite-400: var(--color-grafite-400);
+  --color-grafite-500: var(--color-grafite-500);
+  --color-grafite-600: var(--color-grafite-600);
+  --color-grafite-700: var(--color-grafite-700);
+  --color-grafite-800: var(--color-grafite-800);
+  --color-grafite-900: var(--color-grafite-900);
+  --color-primary-50: var(--color-primary-50);
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-200: var(--color-primary-200);
+  --color-primary-300: var(--color-primary-300);
+  --color-primary-400: var(--color-primary-400);
+  --color-primary-500: var(--color-primary-500);
+  --color-primary-600: var(--color-primary-600);
+  --color-primary-700: var(--color-primary-700);
+  --color-primary-800: var(--color-primary-800);
+  --color-primary-900: var(--color-primary-900);
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --color-card: var(--color-card);
+  --color-border: var(--color-border);
+  --color-muted: var(--color-muted);
+  --color-muted-foreground: var(--color-muted-foreground);
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-primary-foreground: var(--color-primary-foreground);
+  --color-dark-section: var(--color-dark-section);
+  --color-dark-section-foreground: var(--color-dark-section-foreground);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-pill: var(--radius-pill);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --spacing-section: var(--spacing-section);
+  --spacing-section-sm: var(--spacing-section-sm);
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
+
+/* Faixa Espectro — elemento assinatura da marca.
+   Uso: barra de acento (4px) ou, girada 90deg, espinha vertical da home.
+   Nunca usar como fundo de tela cheia. */
+.faixa-espectro {
+  background: linear-gradient(
+    90deg,
+    var(--color-laranja-500) 0%,
+    var(--color-vermelho-500) 25%,
+    var(--color-verde-500) 50%,
+    var(--color-lima-500) 75%,
+    var(--color-azul-500) 100%
+  );
+  background-size: 200% 100%;
+}
+
+/* Mapeamento categoria → cor. Não trocar esta correspondência. */
+[data-categoria="frutas"]        { --cat-color: var(--color-laranja-500); }
+[data-categoria="verduras"]      { --cat-color: var(--color-lima-500); }
+[data-categoria="legumes"]       { --cat-color: var(--color-verde-500); }
+[data-categoria="ovos"]          { --cat-color: var(--color-terracota-500); }
+[data-categoria="refrigerados"]  { --cat-color: var(--color-azul-500); }

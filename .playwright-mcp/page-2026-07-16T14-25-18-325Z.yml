@@ -1,0 +1,198 @@
+- generic [active] [ref=f18e1]:
+  - generic [ref=f18e3]:
+    - generic [ref=f18e4]:
+      - generic [ref=f18e5]: Recife, PE — Região Metropolitana
+      - link "comercial@disalp.com.br" [ref=f18e9] [cursor=pointer]:
+        - /url: mailto:comercial@disalp.com.br
+      - link "+55 (81) 98814-8831" [ref=f18e13] [cursor=pointer]:
+        - /url: tel:+5581988148831
+    - generic [ref=f18e16]:
+      - link "WhatsApp da Disalp" [ref=f18e17] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send/?phone=5581988148831&text&type=phone_number&app_absent=0
+      - link "Instagram da Disalp" [ref=f18e21] [cursor=pointer]:
+        - /url: https://www.instagram.com/disalpdistribuidora/
+  - banner [ref=f18e26]:
+    - generic [ref=f18e27]:
+      - link "Disalp — página inicial" [ref=f18e28] [cursor=pointer]:
+        - /url: "#"
+        - img "Disalp Distribuidora" [ref=f18e29]
+      - navigation "Navegação principal" [ref=f18e30]:
+        - link "Categorias" [ref=f18e31] [cursor=pointer]:
+          - /url: "#categorias"
+        - link "Como funciona" [ref=f18e32] [cursor=pointer]:
+          - /url: "#rota"
+        - link "Escala" [ref=f18e33] [cursor=pointer]:
+          - /url: "#sobre"
+        - link "Contato" [ref=f18e34] [cursor=pointer]:
+          - /url: "#contato"
+      - link "Pedir tabela" [ref=f18e35] [cursor=pointer]:
+        - /url: "#contato"
+  - main [ref=f18e38]:
+    - generic [ref=f18e39]:
+      - img "Operação Disalp — seleção e distribuição de hortifruti" [ref=f18e41]
+      - generic [ref=f18e44]:
+        - generic [ref=f18e45]: Distribuição de Hortifruti B2B
+        - heading "Da Ceasa pra sua gôndola." [level=1] [ref=f18e49]: Da Ceasa prasua gôndola.
+        - paragraph [ref=f18e50]: Compramos direto na Ceasa, selecionamos por ponto de maturação e entregamos com cadeia de frio controlada para as principais redes de varejo do Grande Recife.
+        - link "Conheça a Disalp" [ref=f18e52] [cursor=pointer]:
+          - /url: "#sobre"
+    - generic [ref=f18e57]:
+      - generic [ref=f18e58]:
+        - heading "Frutas" [level=2] [ref=f18e62]
+        - paragraph [ref=f18e63]: Seleção diária direto da Ceasa, por ponto de maturação.
+      - generic [ref=f18e64]:
+        - heading "Verduras" [level=2] [ref=f18e70]
+        - paragraph [ref=f18e71]: Folhas com cadeia de frio curta, colhidas na janela certa.
+      - generic [ref=f18e72]:
+        - heading "Legumes" [level=2] [ref=f18e77]
+        - paragraph [ref=f18e78]: Volume constante para reposição diária de gôndola.
+      - generic [ref=f18e79]:
+        - heading "Ovos" [level=2] [ref=f18e82]
+        - paragraph [ref=f18e83]: Classificação e rastreabilidade por lote de granja.
+      - generic [ref=f18e84]:
+        - heading "Refrigerados" [level=2] [ref=f18e98]
+        - paragraph [ref=f18e99]: Congelados e resfriados com controle de temperatura ponta a ponta.
+    - generic [ref=f18e101]:
+      - generic [ref=f18e102]:
+        - text: Quem atendemos
+        - heading "Especialistas em abastecer grandes operações." [level=2] [ref=f18e103]
+      - generic [ref=f18e104]:
+        - generic [ref=f18e105]: Hotéis
+        - generic [ref=f18e109]: Hospitais
+        - generic [ref=f18e114]: Restaurantes
+        - generic [ref=f18e120]: Resorts
+        - generic [ref=f18e126]: e mais
+      - generic [ref=f18e127]:
+        - generic [ref=f18e134]:
+          - paragraph [ref=f18e135]: +2 mil
+          - paragraph [ref=f18e136]: itens no catálogo
+        - generic [ref=f18e144]:
+          - paragraph [ref=f18e145]: Frota própria
+          - paragraph [ref=f18e146]: sem depender de terceiros
+    - generic [ref=f18e148]:
+      - generic [ref=f18e149]:
+        - generic [ref=f18e150]:
+          - img "Central de distribuição da Disalp" [ref=f18e152]
+          - img "Equipe da Disalp conferindo a qualidade dos produtos" [ref=f18e154]
+        - generic [ref=f18e155]:
+          - generic [ref=f18e156]:
+            - text: 35+
+            - paragraph [ref=f18e157]: Redes atendidas
+          - generic [ref=f18e158]:
+            - text: 6x
+            - paragraph [ref=f18e159]: Entregas / semana
+          - generic [ref=f18e160]:
+            - text: 98%
+            - paragraph [ref=f18e161]: Pedidos na janela
+      - generic [ref=f18e162]:
+        - text: Sobre a Disalp
+        - heading "Especialistas em cada etapa da cadeia hortifruti." [level=2] [ref=f18e163]
+        - paragraph [ref=f18e164]: Compramos direto na Ceasa, selecionamos por ponto de maturação e entregamos com cadeia de frio controlada — do primeiro contato até a última gôndola reposta, tudo operado pela mesma equipe.
+    - generic [ref=f18e166]:
+      - generic [ref=f18e167]:
+        - text: Como funciona
+        - heading "Uma rota, cinco paradas." [level=2] [ref=f18e168]
+        - paragraph [ref=f18e169]: Cada categoria que a Disalp entrega é uma parada da mesma rota diária — da Ceasa até a sua gôndola.
+      - list [ref=f18e172]:
+        - listitem [ref=f18e173]:
+          - generic [ref=f18e179]:
+            - heading "Frutas" [level=3] [ref=f18e180]
+            - paragraph [ref=f18e181]: Seleção diária direto da Ceasa, por ponto de maturação.
+        - listitem [ref=f18e182]:
+          - generic [ref=f18e190]:
+            - heading "Verduras" [level=3] [ref=f18e191]
+            - paragraph [ref=f18e192]: Folhas com cadeia de frio curta, colhidas na janela certa.
+        - listitem [ref=f18e193]:
+          - generic [ref=f18e200]:
+            - heading "Legumes" [level=3] [ref=f18e201]
+            - paragraph [ref=f18e202]: Volume constante para reposição diária de gôndola.
+        - listitem [ref=f18e203]:
+          - generic [ref=f18e208]:
+            - heading "Ovos" [level=3] [ref=f18e209]
+            - paragraph [ref=f18e210]: Classificação e rastreabilidade por lote de granja.
+        - listitem [ref=f18e211]:
+          - generic [ref=f18e227]:
+            - heading "Refrigerados" [level=3] [ref=f18e228]
+            - paragraph [ref=f18e229]: Congelados e resfriados com controle de temperatura ponta a ponta.
+    - generic [ref=f18e230]:
+      - generic [ref=f18e231]:
+        - img "Produtos hortifruti selecionados pela Disalp" [ref=f18e232]
+        - button "Assistir vídeo institucional da Disalp" [ref=f18e233]
+      - generic [ref=f18e237]:
+        - text: O que oferecemos
+        - heading "Tudo que sua rede precisa, numa única entrega." [level=2] [ref=f18e238]
+        - paragraph [ref=f18e239]: Da compra na Ceasa até a última gôndola reposta — cada etapa operada pela mesma equipe, com o mesmo padrão.
+        - generic [ref=f18e240]:
+          - generic [ref=f18e241]:
+            - heading "Compra na Ceasa" [level=3] [ref=f18e247]
+            - paragraph [ref=f18e248]: Seleção diária direto do maior centro de abastecimento da região.
+            - link "Saiba mais" [ref=f18e249] [cursor=pointer]:
+              - /url: "#contato"
+          - generic [ref=f18e252]:
+            - heading "Cadeia de Frio" [level=3] [ref=f18e256]
+            - paragraph [ref=f18e257]: Temperatura controlada do armazém até a porta do cliente.
+            - link "Saiba mais" [ref=f18e258] [cursor=pointer]:
+              - /url: "#contato"
+          - generic [ref=f18e261]:
+            - heading "Roteirização" [level=3] [ref=f18e267]
+            - paragraph [ref=f18e268]: Rotas otimizadas, entrega dentro da janela combinada.
+            - link "Saiba mais" [ref=f18e269] [cursor=pointer]:
+              - /url: "#contato"
+          - generic [ref=f18e272]:
+            - heading "Curadoria" [level=3] [ref=f18e277]
+            - paragraph [ref=f18e278]: Seleção por ponto de maturação, reduz perda na gôndola.
+            - link "Saiba mais" [ref=f18e279] [cursor=pointer]:
+              - /url: "#contato"
+    - generic [ref=f18e283]:
+      - generic [ref=f18e284]:
+        - generic [ref=f18e285]: Fale conosco
+        - heading "Entre em contato, conte como podemos ajudar." [level=2] [ref=f18e286]
+      - generic [ref=f18e287]:
+        - link [ref=f18e288] [cursor=pointer]:
+          - /url: mailto:comercial@disalp.com.br
+          - generic [ref=f18e293]:
+            - paragraph [ref=f18e294]: E-mail
+            - paragraph [ref=f18e295]: comercial@disalp.com.br
+        - link [ref=f18e296] [cursor=pointer]:
+          - /url: tel:+5581988148831
+          - generic [ref=f18e300]:
+            - paragraph [ref=f18e301]: Telefone
+            - paragraph [ref=f18e302]: +55 (81) 98814-8831
+        - link [ref=f18e303] [cursor=pointer]:
+          - /url: https://www.google.com/maps?q=CEASA-PE%20-%20Centro%20de%20Abastecimento%20e%20Log%C3%ADstica%20de%20Pernambuco%2C%20BR-101%20Sul%2C%20Km%2070%2C%20s%2Fn%2C%20N%C2%BA%20550%2C%20Curado%2C%20Recife%20-%20PE%2C%2050790-640%2C%20Brasil
+          - generic [ref=f18e308]:
+            - paragraph [ref=f18e309]: Nosso escritório
+            - paragraph [ref=f18e310]: CEASA-PE, Curado — Recife-PE
+      - generic [ref=f18e311]:
+        - iframe [ref=f18e313]
+        - generic [ref=f18e314]:
+          - generic [ref=f18e315]:
+            - generic [ref=f18e316]:
+              - text: Seu nome
+              - textbox "Seu nome" [ref=f18e317]
+            - generic [ref=f18e318]:
+              - text: Sobrenome
+              - textbox "Sobrenome" [ref=f18e319]:
+                - /placeholder: Seu sobrenome
+          - generic [ref=f18e320]:
+            - text: E-mail
+            - textbox "E-mail" [ref=f18e321]:
+              - /placeholder: seu@email.com
+          - generic [ref=f18e322]:
+            - text: Mensagem
+            - textbox "Mensagem" [ref=f18e323]:
+              - /placeholder: Escreva sua mensagem…
+          - button "Enviar" [ref=f18e324]
+  - contentinfo [ref=f18e325]:
+    - generic [ref=f18e326]:
+      - img "Disalp Distribuidora" [ref=f18e328]
+      - generic [ref=f18e329]:
+        - paragraph [ref=f18e334]: Recife, PE — atendimento à Região Metropolitana
+        - link "+55 (81) 98814-8831" [ref=f18e338] [cursor=pointer]:
+          - /url: tel:+5581988148831
+        - link "comercial@disalp.com.br" [ref=f18e343] [cursor=pointer]:
+          - /url: mailto:comercial@disalp.com.br
+    - generic [ref=f18e344]: © 2026 Disalp Distribuidora — todos os direitos reservados.
+  - link "Falar com a Disalp no WhatsApp" [ref=f18e345] [cursor=pointer]:
+    - /url: https://api.whatsapp.com/send/?phone=5581988148831&text&type=phone_number&app_absent=0
+  - button "Open Next.js Dev Tools" [ref=f18e354] [cursor=pointer]
