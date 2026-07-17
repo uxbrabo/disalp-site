@@ -221,8 +221,9 @@ export function CatalogoPedido() {
                 value={empresa}
                 onChange={(e) => setEmpresa(e.target.value)}
                 placeholder="Nome da sua empresa (opcional)"
+                aria-label="Nome da sua empresa (opcional)"
                 autoComplete="organization"
-                className="h-10 w-full max-w-xs border border-border bg-background px-3 font-sans text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                className="h-10 w-full max-w-xs border border-border bg-background px-3 font-sans text-base text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:text-sm"
               />
             </div>
             <ButtonLink

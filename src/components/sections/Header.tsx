@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ButtonLink } from "@/components/ui/Button";
+import { MobileNav } from "@/components/sections/MobileNav";
 import { ArrowRight } from "lucide-react";
 
 /**
@@ -48,9 +49,12 @@ export function Header() {
           ))}
         </nav>
 
-        <ButtonLink href="/catalogo" size="sm" icon={<ArrowRight size={16} strokeWidth={2.5} />}>
-          Pedir tabela
-        </ButtonLink>
+        <div className="flex items-center gap-2">
+          <ButtonLink href="/catalogo" size="sm" icon={<ArrowRight size={16} strokeWidth={2.5} />}>
+            Pedir tabela
+          </ButtonLink>
+          <MobileNav items={NAV} />
+        </div>
       </div>
     </header>
   );

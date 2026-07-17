@@ -27,12 +27,13 @@ export function FaixaCategorias() {
             return (
               <motion.div
                 key={categoria.id}
+                id={`categorias-${categoria.id}`}
                 variants={fadeUp}
                 custom={i}
                 initial={reduceMotion ? undefined : "hidden"}
                 whileInView={reduceMotion ? undefined : "show"}
                 viewport={{ once: true, margin: "-80px" }}
-                className="group flex flex-col items-center px-2 text-center"
+                className="group flex scroll-mt-[72px] flex-col items-center px-2 text-center"
               >
                 <Icon
                   size={40}

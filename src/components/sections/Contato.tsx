@@ -34,7 +34,7 @@ const CONTATOS = [
 ] as const;
 
 const inputClass =
-  "mt-2 h-11 w-full rounded-none border border-border bg-background px-4 font-sans text-sm text-foreground " +
+  "mt-2 h-11 w-full rounded-none border border-border bg-background px-4 font-sans text-base text-foreground sm:text-sm " +
   "placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary";
 
 /**
@@ -178,7 +178,7 @@ export function Contato() {
                 required
                 rows={5}
                 placeholder="Escreva sua mensagem…"
-                className="mt-2 w-full resize-none rounded-none border border-border bg-background px-4 py-3 font-sans text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                className="mt-2 w-full resize-none rounded-none border border-border bg-background px-4 py-3 font-sans text-base text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:text-sm"
               />
             </div>
 
