@@ -41,9 +41,9 @@ export function FaixaCategorias() {
                   className="text-white transition-transform duration-300 motion-safe:group-hover:scale-110"
                   aria-hidden
                 />
-                <h2 className="mt-4 font-display text-lg font-bold text-white">
+                <p className="mt-4 font-display text-lg font-bold text-white">
                   {categoria.label}
-                </h2>
+                </p>
                 <p className="mt-1.5 max-w-[170px] font-sans text-xs leading-relaxed text-primary-50/85">
                   {categoria.descricao}
                 </p>
