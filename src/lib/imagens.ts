@@ -16,7 +16,7 @@
 export const IMAGENS = {
   hero: {
     src: "/img/hero.jpg",
-    alt: "Operação Disalp — seleção e distribuição de hortifruti",
+    alt: "Operação Disalp: seleção e distribuição de hortifruti",
   },
   aboutMain: {
     src: "/img/about-main.jpg",

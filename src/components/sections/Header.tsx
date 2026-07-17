@@ -26,7 +26,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 h-[72px] border-b border-border bg-background/90 backdrop-blur">
       <div className="mx-auto flex h-full max-w-[1200px] items-center justify-between px-6">
-        <Link href="/" className="flex items-center" aria-label="Disalp — página inicial">
+        <Link href="/" className="flex items-center" aria-label="Disalp, página inicial">
           <Image
             src="/brand/logo-disalp.svg"
             alt="Disalp Distribuidora"

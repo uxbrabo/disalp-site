@@ -19,7 +19,7 @@ export function Topbar() {
         <div className="flex items-center gap-5">
           <span className="flex items-center gap-1.5">
             <MapPin size={14} strokeWidth={2} aria-hidden />
-            Recife, PE — Região Metropolitana
+            Recife, PE · Região Metropolitana
           </span>
           <a href="mailto:comercial@disalp.com.br" className="flex items-center gap-1.5 hover:opacity-80">
             <Mail size={14} strokeWidth={2} aria-hidden />

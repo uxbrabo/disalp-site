@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { motion, type Variants } from "framer-motion";
+import { AnimatePresence, motion, type Variants } from "framer-motion";
 import { ButtonLink } from "@/components/ui/Button";
 import { IMAGENS } from "@/lib/imagens";
 import { ArrowRight, Leaf } from "lucide-react";
@@ -10,6 +10,48 @@ import { EASE_OUT, usePrefersReducedMotion } from "@/lib/motion";
 
 const HERO_VIDEO_SRC = "/videos/VIDEO-HERO-01.mp4";
 const CROSSFADE_S = 0.6;
+
+/** Palavra que alterna no fim do título ("empresa" / "gôndola"). */
+const PALAVRAS_TITULO = ["empresa", "gôndola"];
+
+/**
+ * PalavraRotativa — troca a última palavra do título a cada 2,6s com um
+ * fade curto. Com prefers-reduced-motion, fica estática na primeira palavra.
+ */
+function PalavraRotativa() {
+  const reduceMotion = usePrefersReducedMotion();
+  const [indice, setIndice] = useState(0);
+
+  useEffect(() => {
+    if (reduceMotion) return;
+    const id = setInterval(
+      () => setIndice((i) => (i + 1) % PALAVRAS_TITULO.length),
+      2600
+    );
+    return () => clearInterval(id);
+  }, [reduceMotion]);
+
+  if (reduceMotion) {
+    return <span className="text-primary-200">{PALAVRAS_TITULO[0]}.</span>;
+  }
+
+  return (
+    <span className="relative inline-block align-baseline text-primary-200">
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={PALAVRAS_TITULO[indice]}
+          initial={{ opacity: 0, y: "0.2em" }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: "-0.2em" }}
+          transition={{ duration: 0.35, ease: EASE_OUT }}
+          className="inline-block"
+        >
+          {PALAVRAS_TITULO[indice]}.
+        </motion.span>
+      </AnimatePresence>
+    </span>
+  );
+}
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 16 },
@@ -82,9 +124,9 @@ export function Hero() {
             variants={fadeUp}
             className="mt-5 font-display text-5xl font-extrabold leading-[1.05] tracking-tight text-white md:text-6xl"
           >
-            Da Ceasa pra
+            Da Ceasa para
             <br />
-            sua gôndola.
+            sua <PalavraRotativa />
           </motion.h1>
 
           <motion.p
@@ -92,9 +134,9 @@ export function Hero() {
             variants={fadeUp}
             className="mt-6 max-w-md font-sans text-base leading-relaxed text-white/85 md:text-lg"
           >
-            Compramos direto na Ceasa, selecionamos por ponto de maturação e
-            entregamos com cadeia de frio controlada para as principais redes de
-            varejo do Grande Recife.
+            Há mais de 40 anos, selecionamos os melhores produtos e garantimos
+            qualidade, segurança e regularidade no abastecimento do Grande
+            Recife.
           </motion.p>
 
           <motion.div custom={3} variants={fadeUp} className="mt-9">

@@ -112,7 +112,7 @@ export function Contato() {
           <motion.div {...anim(0)} className="relative aspect-[4/5] w-full overflow-hidden border border-border lg:aspect-auto lg:min-h-[420px]">
             <iframe
               src={GOOGLE_MAPS_EMBED_SRC}
-              title="Localização da Disalp — CEASA-PE, Curado, Recife"
+              title="Localização da Disalp · CEASA-PE, Curado, Recife"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="absolute inset-0 h-full w-full border-0"
@@ -187,7 +187,7 @@ export function Contato() {
             </Button>
             {enviado && (
               <p aria-live="polite" className="font-sans text-sm text-primary">
-                Recebemos sua mensagem — entraremos em contato em breve.
+                Recebemos sua mensagem, entraremos em contato em breve.
               </p>
             )}
           </motion.form>

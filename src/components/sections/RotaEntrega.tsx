@@ -37,7 +37,7 @@ const ETAPAS: Etapa[] = [
   {
     numero: "01",
     icon: ShoppingCart,
-    titulo: "Compra na Ceasa",
+    titulo: "Ceasa",
     descricao: "Seleção direto no maior centro de abastecimento da região, por ponto de maturação.",
   },
   {
@@ -130,8 +130,8 @@ function Pitch() {
         Uma rota, cinco paradas.
       </h2>
       <p className="mt-6 max-w-md font-sans text-base leading-relaxed text-muted-foreground">
-        Cada categoria que a Disalp entrega é uma parada da mesma rota diária
-        — da Ceasa até a sua gôndola.
+        Cada categoria que a Disalp entrega é uma parada da mesma rota diária,
+        da Ceasa até a sua gôndola.
       </p>
       <div className="mt-9">
         <ButtonLink href="/catalogo" size="lg" icon={<ArrowRight size={18} strokeWidth={2.5} />}>
@@ -290,7 +290,7 @@ function TimelineEstatica({ oculta }: { oculta: boolean }) {
           </h2>
           <p className="mt-4 font-sans text-base leading-relaxed text-muted-foreground">
             Cada categoria que a Disalp entrega é uma parada da mesma rota
-            diária — da Ceasa até a sua gôndola.
+            diária, da Ceasa até a sua gôndola.
           </p>
         </div>
 

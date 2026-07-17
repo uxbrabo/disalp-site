@@ -85,7 +85,7 @@ export function OQueOferecemos() {
             {...anim(2)}
             className="mt-5 max-w-md font-sans text-base leading-relaxed text-primary-50/85"
           >
-            Da compra na Ceasa até a última gôndola reposta — cada etapa operada
+            Da compra na Ceasa até a última gôndola reposta, cada etapa operada
             pela mesma equipe, com o mesmo padrão.
           </motion.p>
 

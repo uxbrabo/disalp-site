@@ -26,7 +26,7 @@ export const CATEGORIAS: Categoria[] = [
     label: "Frutas",
     token: "laranja",
     icon: Apple,
-    descricao: "Seleção diária direto da Ceasa, por ponto de maturação.",
+    descricao: "Selecionamos os melhores produtos.",
   },
   {
     id: "verduras",

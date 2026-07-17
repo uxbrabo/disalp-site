@@ -88,9 +88,10 @@ export function Sobre() {
             Especialistas em cada etapa da cadeia hortifruti.
           </h2>
           <p className="mt-6 max-w-md font-sans text-base leading-relaxed text-muted-foreground">
-            Compramos direto na Ceasa, selecionamos por ponto de maturação e
-            entregamos com cadeia de frio controlada — do primeiro contato até a
-            última gôndola reposta, tudo operado pela mesma equipe.
+            Desde 1983, garantimos qualidade, pontualidade e confiança.
+            Abastecemos operações que não podem parar, entregamos frescor,
+            segurança e previsibilidade. Mais do que alimentos, entregamos
+            qualidade.
           </p>
         </motion.div>
       </div>

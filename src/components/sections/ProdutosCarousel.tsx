@@ -102,7 +102,7 @@ export function ProdutosCarousel() {
             Nosso catálogo
           </span>
           <h2 className="mt-3 font-display text-3xl font-bold text-grafite-500 md:text-4xl">
-            Direto da Ceasa pra sua prateleira.
+            Direto da Ceasa para sua empresa.
           </h2>
 
           <div className="mt-6 flex flex-wrap gap-2">

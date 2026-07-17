@@ -59,12 +59,6 @@ export function QuemAtendemos() {
               </motion.span>
             );
           })}
-          <motion.span
-            {...anim(SEGMENTOS.length)}
-            className="inline-flex items-center border border-border bg-background px-4 py-2 font-sans text-sm font-medium text-muted-foreground"
-          >
-            e mais
-          </motion.span>
         </div>
 
         {/* Destaques de escala */}

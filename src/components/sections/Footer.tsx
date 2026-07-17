@@ -108,7 +108,7 @@ export function Footer() {
             <div className="flex gap-3">
               <MapPin size={18} strokeWidth={2} className="mt-0.5 shrink-0 text-primary-300" />
               <p className="font-sans text-sm leading-relaxed text-primary-100/85">
-                Recife, PE — atendimento à Região Metropolitana
+                Recife, PE · atendimento à Região Metropolitana
               </p>
             </div>
             <div className="flex gap-3">
@@ -135,8 +135,8 @@ export function Footer() {
 
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-2 px-6 py-6 text-center font-mono text-xs text-primary-100/60 sm:flex-row sm:justify-between sm:text-left">
-          <span>© {new Date().getFullYear()} Disalp Distribuidora — todos os direitos reservados.</span>
-          <span>CEASA-PE, Curado — Recife-PE</span>
+          <span>© {new Date().getFullYear()} Disalp Distribuidora. Todos os direitos reservados.</span>
+          <span>CEASA-PE, Curado · Recife-PE</span>
         </div>
       </div>
     </footer>

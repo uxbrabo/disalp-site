@@ -27,7 +27,7 @@ function montarMensagem(
 ) {
   const linhas = itens.map(
     ({ produto, quantidade }) =>
-      `- ${produto.nome} (${produto.unidade}) x${quantidade} — ${formatarPreco(produto.preco * quantidade)}`
+      `- ${produto.nome} (${produto.unidade}) x${quantidade}: ${formatarPreco(produto.preco * quantidade)}`
   );
   const partes = [
     "Olá! Gostaria de fazer o seguinte pedido:",
@@ -96,7 +96,7 @@ export function CatalogoPedido() {
             Monte seu pedido.
           </h1>
           <p className="mt-4 font-sans text-base leading-relaxed text-muted-foreground">
-            Escolha as quantidades e envie direto pelo WhatsApp — a gente confirma
+            Escolha as quantidades e envie direto pelo WhatsApp, a gente confirma
             disponibilidade e prazo de entrega com você.
           </p>
         </div>

@@ -15,7 +15,7 @@ export function montarLinkWhatsApp(mensagem: string) {
 export const ENDERECO_COMPLETO =
   "CEASA-PE - Centro de Abastecimento e Logística de Pernambuco, BR-101 Sul, Km 70, s/n, Nº 550, Curado, Recife - PE, 50790-640, Brasil";
 
-export const ENDERECO_CURTO = "CEASA-PE, Curado — Recife-PE";
+export const ENDERECO_CURTO = "CEASA-PE, Curado · Recife-PE";
 
 export const GOOGLE_MAPS_EMBED_SRC = `https://www.google.com/maps?q=${encodeURIComponent(ENDERECO_COMPLETO)}&output=embed`;
 

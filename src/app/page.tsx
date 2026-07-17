@@ -5,7 +5,6 @@ import { FaixaCategorias } from "@/components/sections/FaixaCategorias";
 import { QuemAtendemos } from "@/components/sections/QuemAtendemos";
 import { Sobre } from "@/components/sections/Sobre";
 import { RotaEntrega } from "@/components/sections/RotaEntrega";
-import { OQueOferecemos } from "@/components/sections/OQueOferecemos";
 import { ProdutosCarousel } from "@/components/sections/ProdutosCarousel";
 import { Contato } from "@/components/sections/Contato";
 import { Footer } from "@/components/sections/Footer";
@@ -21,7 +20,6 @@ export default function Home() {
         <QuemAtendemos />
         <Sobre />
         <RotaEntrega />
-        <OQueOferecemos />
         <ProdutosCarousel />
         <Contato />
       </main>

@@ -5,7 +5,7 @@ import { CatalogoPedido } from "@/components/sections/CatalogoPedido";
 import { Footer } from "@/components/sections/Footer";
 
 export const metadata: Metadata = {
-  title: "Catálogo — Disalp Distribuidora",
+  title: "Catálogo | Disalp Distribuidora",
   description:
     "Monte seu pedido de hortifruti direto da Ceasa e envie pelo WhatsApp para a Disalp.",
 };
